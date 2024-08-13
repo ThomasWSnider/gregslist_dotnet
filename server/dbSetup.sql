@@ -6,3 +6,16 @@ CREATE TABLE IF NOT EXISTS accounts(
   email varchar(255) UNIQUE COMMENT 'User Email',
   picture varchar(255) COMMENT 'User Picture'
 ) default charset utf8mb4 COMMENT '';
+
+CREATE TABLE houses(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  bedrooms TINYINT UNSIGNED NOT NULL,
+  bathrooms TINYINT UNSIGNED NOT NULL,
+  levels TINYINT UNSIGNED NOT NULL,
+  imgUrl TEXT NOT NULL,
+  year SMALLINT UNSIGNED NOT NULL,
+  price INT UNSIGNED NOT NULL,
+  description TEXT,
+  creatorId VARCHAR(255) NOT NULL,
+  FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
+);
