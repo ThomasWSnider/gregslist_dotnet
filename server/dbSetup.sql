@@ -15,7 +15,7 @@ CREATE TABLE houses(
   imgUrl TEXT NOT NULL,
   year SMALLINT UNSIGNED NOT NULL,
   price INT UNSIGNED NOT NULL,
-  description TEXT,
+  description TEXT NOT NULL,
   creatorId VARCHAR(255) NOT NULL,
   FOREIGN KEY (creatorId) REFERENCES accounts (id) ON DELETE CASCADE
 );
